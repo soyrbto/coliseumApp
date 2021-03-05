@@ -1,4 +1,8 @@
-<div class="pairing"><p>1-1</p></div>
+<script>
+  export let pairing;
+</script>
+
+<div class="pairing"><p>{pairing}</p></div>
 
 <style>
   .pairing {

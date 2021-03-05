@@ -1,4 +1,8 @@
-<div class="name"><p>Nombre del participante</p></div>
+<script>
+  export let name;
+</script>
+
+<div class="name"><p>{name}</p></div>
 
 <style>
   .name {

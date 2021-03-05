@@ -1,4 +1,5 @@
 <script>
+  import { randomizer } from './functions';
   import Input from './Components/Input.svelte';
   import Winner from './Components/Winner.svelte';
   import Format from './Components/Format.svelte';
