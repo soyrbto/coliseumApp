@@ -6,30 +6,41 @@
   import Points from './Points.svelte';
 </script>
 
-{#each $players as player}
-  <div transition:fade={{ delay: 250, duration: 300 }} class="wrapper-col-fill">
-    <div class="col-1-fill"><NameAdd name={player} /></div>
-    <div class="col-2-fill" />
+<div class="wrapper-all"  >
+  <div class="wrapper-col-1"   >
+    {#each $players as player}
+      <div class="fill-1" transition:fade={{ delay: 250, duration: 300 }}><NameAdd name={player} /></div>
+    {/each}
   </div>
-{/each}
-{#each $startPairing as pairing}
-  <Pairing {pairing} />
-  <Points />
-{/each}
-
+  <div class="wrapper-col-n" >
+    {#each $startPairing as pairing}
+      <div class="round" transition:fade={{ delay: 250, duration: 300 }}>
+        <Pairing {pairing} />
+        <Points />
+      </div>
+    {/each}
+  </div>
+</div>
 <style type="text/scss">
-  .wrapper-col-fill {
+  .wrapper-all {
     display: flex;
-    font-size: 20px;
-    margin-bottom: 25px;
-    .col-1-fill {
-      width: 385px;
+
+    .wrapper-col-1 {
+      font-size: 20px;
+      width: 35%;
+      padding-right: 3%;
+
+      .fill-1 {
+        width: 100%;
+        margin-bottom: 25px;
+
+      }
     }
-    .col-2-fill {
-      display: flex;
-      justify-content: start;
-      width: 80%;
-      margin-left: 50px;
+    .wrapper-col-n {
+      .round {
+        display: flex;
+        margin:0 0 25px 0;
+      }
     }
   }
 </style>

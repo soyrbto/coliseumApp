@@ -2,18 +2,26 @@
   export let name;
 </script>
 
-<div class="name"><p>{name}</p></div>
+<div class="wrapper-name">
+  <img src="/images/x-circle.svg" alt="delete">
+  <div class="name"><p>{name}</p></div>
+</div>
+<style type="text/scss">
 
-<style>
-  .name {
-    background-color: #ef8254;
-    color: white;
-    width: 385px;
-    height: 58px;
-    border-radius: 14px;
-    font-size: 20px;
+  .wrapper-name {
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
+    .name {
+      background-color: #ef8254;
+      color: white;
+      height: 58px;
+      width: 100%;
+      margin-left: 20px;
+      border-radius: 14px;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+}
 </style>

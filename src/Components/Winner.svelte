@@ -1,10 +1,10 @@
 <div class="wrapper-row">
   <div class="row-1">
-    <input class="name-1" type="text" />
-    <button class="random"> Aleatorizar </button>
+    <div class="name-1" type="text"><p>Posible ganador</p></div>
+    <button class="random"><p> Aleatorizar </p></button>
   </div>
   <div class="row-2">
-    <input class="name-2" type="text" />
+    <div class="name-2" type="text">Posible ganador</div>
   </div>
 </div>
 
@@ -15,10 +15,17 @@
       margin-bottom: 35px;
       display: flex;
       .name-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 493px;
         height: 58px;
         margin-right: 30px;
         border-radius: 10px;
+        background-color: #BFC0C0;
+        color: #2D3142;
+        font-size: 20px;
+        border: 4px solid white;
       }
       .random {
         background-color: #ef8254;
@@ -34,10 +41,17 @@
 
     .row-2 {
       .name-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 493px;
         height: 58px;
         margin-right: 30px;
         border-radius: 10px;
+        background-color: #BFC0C0;
+        color: #2D3142;
+        font-size: 20px;
+        border: 4px solid white;
       }
     }
   }

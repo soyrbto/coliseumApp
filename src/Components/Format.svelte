@@ -20,18 +20,20 @@
     font-size: 20px;
     margin-bottom: 25px;
     .col-1 {
-      width: 385px;
+      width: 35%;
+      padding-right: 3% ;
     }
     .col-2 {
       display: flex;
-      justify-content: space-between;
-      width: 80%;
-      margin-left: 50px;
+      width: 65%;
+      text-align: center;
+
     }
 
     .pairing,
     .points {
       width: 90px;
+      margin: 0 13px;
     }
   }
 </style>

@@ -4,6 +4,7 @@
   import Winner from './Components/Winner.svelte';
   import Format from './Components/Format.svelte';
   import FillRow from './Components/FillRow.svelte';
+  import Round from './Components/Round.svelte';
 </script>
 
 <main>
@@ -11,6 +12,7 @@
     <img src="\images\Coliseum App.svg" alt="logo" />
     <div class="wrapper-main">
       <Input />
+      <Round></Round>
       <Winner />
     </div>
   </header>
