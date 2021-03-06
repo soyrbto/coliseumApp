@@ -1,10 +1,11 @@
 <script>
   import { randomizer, serializer } from '../functions';
-  import { players, round, startPairing } from '../store';
+  import { players, round, rounds, startPairing, pointsArray } from '../store';
 
   let nodePlayer;
   let openSubs = true;
   let nodeRound;
+  let onPlay = false;
 
   function addParticipant(e) {
     if (e.keyCode == 13 || e.detail == 1) {
@@ -25,6 +26,7 @@
     players.set([]);
     round.set(0);
     openSubs = true;
+    nodeRound.innerText = 'Comenzar';
   }
 
   function changeRound() {
@@ -32,6 +34,15 @@
       openSubs = false;
       nodeRound.innerText = `Siguiente ronda`;
       randomizer.inRandom();
+      round.update((round) => round + 1);
+      rounds.update((roundArray) => [...roundArray]);
+      onPlay = true;
+    } else if (onPlay && $round < 5 && $pointsArray.indexOf('') == -1) {
+      round.update((round) => round + 1);
+      rounds.update((roundArray) => [...roundArray, $round]);
+      pointsArray.set(['']);
+    } else {
+      window.alert('rellena todos los puntos antes de pasar la ronda');
     }
 
     if ($players.length < 8) {
@@ -58,7 +69,7 @@
   <div class="row-2">
     <button on:click={resetData} class="reset">Reset</button>
     <button on:click={changeRound} bind:this={nodeRound} class="start"
-      >comenzar</button
+      >Comenzar</button
     >
   </div>
 </div>

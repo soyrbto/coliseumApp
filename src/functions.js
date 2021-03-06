@@ -1,24 +1,22 @@
 import { get } from 'svelte/store';
 import { players, startPairing } from './store';
 
+//----------function that randomize first pairing-------->
 const randomizer = (function () {
   let randomArray = [];
   let pairingArray = [];
   function inRandom() {
     let numberOfPlayers = get(players).length;
-    console.log(numberOfPlayers);
 
     for (let i = 0; i < numberOfPlayers; i++) {
       randomArray[i] = Math.random();
     }
-    console.log(randomArray);
 
     for (let i = 0; i < numberOfPlayers; i++) {
       pairingArray[randomArray.indexOf(Math.max(...randomArray))] = `${i}`;
       randomArray[randomArray.indexOf(Math.max(...randomArray))] = 0;
     }
     startPairing.set(pairingArray);
-    console.log(get(startPairing));
 
     return pairingArray;
   }
@@ -30,6 +28,7 @@ const randomizer = (function () {
   return { inRandom, resetPairing };
 })();
 
+//====================function that serialize unique components=====>
 const serializer = (function () {
   let id = -1;
 
@@ -48,4 +47,14 @@ const serializer = (function () {
   return { addId, substract, reset };
 })();
 
-export { randomizer, serializer };
+//===========function that calculates pairing over array points====>
+
+const pairing = (function () {
+  let id = -1;
+
+  function pairingBrackets() {}
+
+  return;
+})();
+
+export { randomizer, serializer, pairing };

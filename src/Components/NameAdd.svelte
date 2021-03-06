@@ -1,6 +1,7 @@
 <script>
+  import { fade } from 'svelte/transition';
   import { serializer } from '../functions';
-  import { players } from '../store';
+  import { players, round } from '../store';
   import { onMount } from 'svelte';
   export let name;
   let idElement;
@@ -19,7 +20,14 @@
 </script>
 
 <div class="wrapper-name">
-  <img on:click={deletePlayer} src="/images/x-circle.svg" alt="delete" />
+  {#if $round == 0}
+    <img
+      on:click={deletePlayer}
+      transition:fade={{ delay: 250, duration: 300 }}
+      src="/images/x-circle.svg"
+      alt="delete"
+    />
+  {/if}
   <div class="name"><p>{name}</p></div>
 </div>
 

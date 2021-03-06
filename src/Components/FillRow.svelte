@@ -1,26 +1,29 @@
 <script>
   import { fade } from 'svelte/transition';
-  import { players, startPairing } from '../store';
+  import { players, rounds } from '../store';
   import NameAdd from './NameAdd.svelte';
   import Pairing from './Pairing.svelte';
   import Points from './Points.svelte';
 </script>
 
-<div class="wrapper-all"  >
-  <div class="wrapper-col-1"   >
+<div class="wrapper-all">
+  <div class="wrapper-col-1">
     {#each $players as player}
-      <div class="fill-1" transition:fade={{ delay: 250, duration: 300 }}><NameAdd name={player} /></div>
-    {/each}
-  </div>
-  <div class="wrapper-col-n" >
-    {#each $startPairing as pairing}
-      <div class="round" transition:fade={{ delay: 250, duration: 300 }}>
-        <Pairing {pairing} />
-        <Points />
+      <div class="fill-1" transition:fade={{ delay: 250, duration: 300 }}>
+        <NameAdd name={player} />
       </div>
     {/each}
   </div>
+  {#each $rounds as round}
+    <div class="wrapper-col-n">
+      <div class="round" transition:fade={{ delay: 250, duration: 300 }}>
+        <Pairing />
+        <Points currentRound={`round-${round}`} />
+      </div>
+    </div>
+  {/each}
 </div>
+
 <style type="text/scss">
   .wrapper-all {
     display: flex;
@@ -33,13 +36,12 @@
       .fill-1 {
         width: 100%;
         margin-bottom: 25px;
-
       }
     }
     .wrapper-col-n {
       .round {
         display: flex;
-        margin:0 0 25px 0;
+        margin: 0 0 25px 0;
       }
     }
   }

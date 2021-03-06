@@ -1,8 +1,12 @@
 <script>
-  export let pairing;
+  import { startPairing } from '../store';
 </script>
 
-<div class="pairing"><p>{pairing}</p></div>
+<div class="column">
+  {#each $startPairing as pairing}
+    <div class="pairing"><p>{pairing}</p></div>
+  {/each}
+</div>
 
 <style>
   .pairing {
@@ -16,5 +20,12 @@
     justify-content: center;
     align-items: center;
     margin: 0 13px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    height: 640px;
+    justify-content: space-between;
   }
 </style>

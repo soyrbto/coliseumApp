@@ -1,5 +1,5 @@
 <div class="wrapper-col">
-  <div class="col-1">Participante</div>
+  <div class="col-1">Participantes</div>
   <div class="col-2">
     <div class="pairing">Pairing</div>
     <div class="points">Puntos</div>
@@ -21,13 +21,12 @@
     margin-bottom: 25px;
     .col-1 {
       width: 35%;
-      padding-right: 3% ;
+      padding-right: 3%;
     }
     .col-2 {
       display: flex;
       width: 65%;
       text-align: center;
-
     }
 
     .pairing,
