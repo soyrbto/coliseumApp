@@ -1,13 +1,29 @@
 <script>
+  import { serializer } from '../functions';
+  import { players } from '../store';
+  import { onMount } from 'svelte';
   export let name;
+  let idElement;
+
+  onMount(() => {
+    idElement = serializer.addId();
+  });
+
+  function deletePlayer() {
+    serializer.substract();
+    let toDelete = $players[idElement];
+    let newArray = $players.filter((el) => el != $players[idElement]);
+    console.log($players, toDelete, newArray, idElement);
+    players.set(newArray);
+  }
 </script>
 
 <div class="wrapper-name">
-  <img src="/images/x-circle.svg" alt="delete">
+  <img on:click={deletePlayer} src="/images/x-circle.svg" alt="delete" />
   <div class="name"><p>{name}</p></div>
 </div>
-<style type="text/scss">
 
+<style type="text/scss">
   .wrapper-name {
     display: flex;
 
@@ -23,5 +39,5 @@
       justify-content: center;
       align-items: center;
     }
-}
+  }
 </style>

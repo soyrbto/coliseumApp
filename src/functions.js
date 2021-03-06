@@ -30,4 +30,22 @@ const randomizer = (function () {
   return { inRandom, resetPairing };
 })();
 
-export { randomizer };
+const serializer = (function () {
+  let id = -1;
+
+  function addId() {
+    id++;
+    return id;
+  }
+
+  function reset() {
+    id = -1;
+  }
+
+  function substract() {
+    id--;
+  }
+  return { addId, substract, reset };
+})();
+
+export { randomizer, serializer };

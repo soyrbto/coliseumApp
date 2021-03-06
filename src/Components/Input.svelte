@@ -1,5 +1,5 @@
 <script>
-  import { randomizer } from '../functions';
+  import { randomizer, serializer } from '../functions';
   import { players, round, startPairing } from '../store';
 
   let nodePlayer;
@@ -8,14 +8,18 @@
 
   function addParticipant(e) {
     if (e.keyCode == 13 || e.detail == 1) {
-      let newPlayer = nodePlayer.value;
-      players.update((value) => [...value, newPlayer]);
-      console.log($players);
-      nodePlayer.value = '';
+      if (nodePlayer.value.length < 4) {
+        window.alert('nombre muy corto, minimo 4 caracteres por participante');
+      } else {
+        let newPlayer = nodePlayer.value;
+        players.update((value) => [...value, newPlayer]);
+        nodePlayer.value = '';
+      }
     }
   }
 
   function resetData() {
+    serializer.reset();
     randomizer.resetPairing();
     startPairing.set([]);
     players.set([]);
