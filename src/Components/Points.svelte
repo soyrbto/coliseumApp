@@ -1,6 +1,6 @@
 <script>
   import { players, round, pointsArray } from '../store';
-  export let currentRound, disable;
+  export let classRound, currentRound;
   let nodesArray, parentNode;
   let pointsRound = [];
 
@@ -15,9 +15,13 @@
 </script>
 
 {#if $round >= 1}
-  <div class="column {currentRound}" bind:this={parentNode}>
+  <div class="column {classRound}" bind:this={parentNode}>
     {#each $players as player, i}
-      <input class:disable class="pairing" on:keyup={getPoints} />
+      <input
+        class:disable={currentRound != $round}
+        class="pairing"
+        on:keyup={getPoints}
+      />
     {/each}
   </div>
 {/if}
@@ -43,5 +47,10 @@
     flex-direction: column;
     height: 640px;
     justify-content: space-between;
+  }
+
+  .disable {
+    pointer-events: none;
+    background-color: #808080;
   }
 </style>

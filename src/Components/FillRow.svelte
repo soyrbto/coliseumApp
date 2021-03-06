@@ -18,7 +18,7 @@
     <div class="wrapper-col-n">
       <div class="round" transition:fade={{ delay: 250, duration: 300 }}>
         <Pairing />
-        <Points currentRound={`round-${round}`} />
+        <Points classRound={`round-${round}`} currentRound={round} />
       </div>
     </div>
   {/each}
