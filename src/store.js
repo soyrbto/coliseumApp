@@ -1,6 +1,15 @@
 import { writable } from 'svelte/store';
 
-const players = writable([]);
+const players = writable([
+  'luis',
+  'rawy',
+  'viviana',
+  'javier',
+  'ricardo',
+  'omar',
+  'paris',
+  'nelly',
+]);
 const round = writable(0);
 const rounds = writable([1]);
 const pointsArray = writable(['']);

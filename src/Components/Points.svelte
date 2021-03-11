@@ -7,7 +7,11 @@
   function getPoints() {
     nodesArray = parentNode.querySelectorAll(`.round-${$round} >  .pairing`);
     nodesArray.forEach((el, i) => {
-      pointsRound[i] = el.value;
+      if (el.value >= 0 && el.value <= 5) {
+        pointsRound[i] = el.value;
+      } else {
+        window.alert('el valor debe estar entre 0 y 5');
+      }
     });
     pointsArray.set(pointsRound);
     console.log($pointsArray);

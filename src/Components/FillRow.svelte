@@ -8,7 +8,7 @@
 
 <div class="wrapper-all">
   <div class="wrapper-col-1">
-    {#each $players as player}
+    {#each $players as player, i}
       <div class="fill-1" transition:fade={{ delay: 250, duration: 300 }}>
         <NameAdd name={player} />
       </div>

@@ -25,6 +25,7 @@
     startPairing.set([]);
     players.set([]);
     round.set(0);
+    rounds.set([1]);
     openSubs = true;
     nodeRound.innerText = 'Comenzar';
   }
@@ -41,7 +42,7 @@
       round.update((round) => round + 1);
       rounds.update((roundArray) => [...roundArray, $round]);
       pointsArray.set(['']);
-    } else {
+    } else if ($round != 0) {
       window.alert('rellena todos los puntos antes de pasar la ronda');
     }
 
