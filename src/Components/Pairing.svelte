@@ -1,12 +1,34 @@
 <script>
-  import { startPairing } from '../store';
+  import { players, round, startPairing } from '../store';
+  export let classRound;
+  let localRound = 0;
+  let nodesArray, parentNode;
+  let testingArray = [1, 2, 3, 4, 5, 6, 7, 8];
+
+  $: {
+    localRound = $round;
+    if (parentNode !== undefined && $round == 1) {
+      nodesArray = parentNode.querySelectorAll(`.round-${$round} >  .pairing`);
+      nodesArray.forEach((el, i) => {
+        el.innerText = $startPairing[i];
+      });
+    } else if (parentNode !== undefined) {
+      nodesArray = parentNode.querySelectorAll(`.round-${$round} >  .pairing`);
+      nodesArray.forEach((el, i) => {
+        //aqui debe ir el pairing en funcion de la ronda
+        el.innerText = testingArray[i];
+      });
+    }
+  }
 </script>
 
-<div class="column">
-  {#each $startPairing as pairing}
-    <div class="pairing"><p>{pairing}</p></div>
-  {/each}
-</div>
+{#if $round > 0}
+  <div class="column {classRound}" bind:this={parentNode}>
+    {#each $players as player}
+      <div class="pairing"><p>{localRound}</p></div>
+    {/each}
+  </div>
+{/if}
 
 <style>
   .pairing {

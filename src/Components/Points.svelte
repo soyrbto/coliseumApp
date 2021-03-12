@@ -8,19 +8,19 @@
     nodesArray = parentNode.querySelectorAll(`.round-${$round} >  .pairing`);
     nodesArray.forEach((el, i) => {
       if (el.value >= 0 && el.value <= 5) {
-        pointsRound[i] = el.value;
+        pointsRound[i] = Number(el.value);
       } else {
         window.alert('el valor debe estar entre 0 y 5');
+        el.value = '';
       }
     });
     pointsArray.set(pointsRound);
-    console.log($pointsArray);
   }
 </script>
 
 {#if $round >= 1}
   <div class="column {classRound}" bind:this={parentNode}>
-    {#each $players as player, i}
+    {#each $players as player}
       <input
         class:disable={currentRound != $round}
         class="pairing"

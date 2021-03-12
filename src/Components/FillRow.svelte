@@ -17,7 +17,7 @@
   {#each $rounds as round}
     <div class="wrapper-col-n">
       <div class="round" transition:fade={{ delay: 250, duration: 300 }}>
-        <Pairing />
+        <Pairing classRound={`round-${round}`} />
         <Points classRound={`round-${round}`} currentRound={round} />
       </div>
     </div>
