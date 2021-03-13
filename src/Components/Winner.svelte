@@ -21,6 +21,7 @@
 
 <style type="text/scss">
   .wrapper-row {
+    visibility: hidden;
     margin: 40px 125px 0 0;
     .row-1 {
       margin-bottom: 35px;

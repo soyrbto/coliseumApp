@@ -63,6 +63,7 @@
         }
       }
       globalTotals.set(totalForStore);
+      console.log($globalTotals);
 
       round.update((round) => round + 1);
 

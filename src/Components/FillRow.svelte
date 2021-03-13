@@ -23,6 +23,9 @@
     </div>
   {/each}
 </div>
+{#if $rounds >= 5}
+  <Points />
+{/if}
 
 <style type="text/scss">
   .wrapper-all {

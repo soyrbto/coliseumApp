@@ -93,7 +93,6 @@ function bracketPairing(rankArray) {
     rankArrayRandom[rankArrayRandom.indexOf(Math.min(...rankArrayRandom))] = 10;
   }
   ttff.reset();
-  console.log(ranked);
 
   for (let p = 0; p < ranked.length / 2; p++) {
     randomBottom[p] = Math.random();
@@ -103,7 +102,6 @@ function bracketPairing(rankArray) {
     rankedBottom[randomBottom.indexOf(Math.max(...randomBottom))] = r;
     randomBottom[randomBottom.indexOf(Math.max(...randomBottom))] = -1;
   }
-  console.log(rankedBottom);
 
   for (let q = 0; q < ranked.length; q++) {
     if (ranked[q] == undefined) {
@@ -121,7 +119,6 @@ function bracketPairing(rankArray) {
   }
 
   ttff.reset();
-  console.log(ranked);
 
   return ranked;
 }
@@ -147,7 +144,6 @@ const pairing = (function () {
   function fnPairing(totalArray) {
     let tp = totalArray;
     let rank = ranking(tp);
-    console.log(rank);
     let pairing = bracketPairing(rank);
     return pairing;
   }

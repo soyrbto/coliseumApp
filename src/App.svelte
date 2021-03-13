@@ -12,7 +12,7 @@
     <img src="\images\Coliseum App.svg" alt="logo" />
     <div class="wrapper-main">
       <Input />
-      <Round></Round>
+      <Round />
       <Winner />
     </div>
   </header>
