@@ -1,9 +1,15 @@
 <script>
-  import { players, round, startPairing } from '../store';
+  import {
+    globalTotals,
+    players,
+    round,
+    startPairing,
+    totalPoints,
+  } from '../store';
+  import { pairing } from '../functions';
   export let classRound;
   let localRound = 0;
   let nodesArray, parentNode;
-  let testingArray = [1, 2, 3, 4, 5, 6, 7, 8];
 
   $: {
     localRound = $round;
@@ -14,9 +20,10 @@
       });
     } else if (parentNode !== undefined) {
       nodesArray = parentNode.querySelectorAll(`.round-${$round} >  .pairing`);
+      let pairingLocal = pairing($globalTotals);
       nodesArray.forEach((el, i) => {
         //aqui debe ir el pairing en funcion de la ronda
-        el.innerText = testingArray[i];
+        el.innerText = pairingLocal[i];
       });
     }
   }

@@ -47,47 +47,112 @@ const serializer = (function () {
   return { addId, substract, reset };
 })();
 
-//===========function that calculates pairing over array points====>
+//=========== function 00 22 44 =======================>
 
-const pairing = (function () {
-  //
-  //
-  function pairingBrackets() {
-    let tp = get(totalPoints);
-    let rank = [];
+const ttff = (function () {
+  let id = 0;
+  let counter = 0;
+  let value;
 
-    for (let i = 1; i <= tp.length; i++) {
-      let maxIterator = tp.indexOf(Math.max(...tp));
-
-      rank[maxIterator] = `${i}`;
-      tp[maxIterator] = 0;
+  function counterGuide() {
+    id++;
+    if (id < 2) {
+      counter++;
+      value = counter * 2;
+    } else {
+      id = 0;
     }
-  }
-
-  return pairingBrackets;
-})();
-
-//========================= function that generate the pairing array ==>
-
-// const pairing = (function () {
-//   function pairingStd() {
-//     //algo
-//   }
-
-//   return { pairingStd };
-// })();
-
-//========================= change round function ==========>
-const commonUse = function () {
-  function nextRound() {
-    //algo
+    return value;
   }
 
   function reset() {
-    // algo
+    id = 0;
+    counter = 0;
+    value = 0;
   }
 
-  return { nextRound, reset };
-};
+  return { counterGuide, reset };
+})();
 
-export { randomizer, serializer, pairing, commonUse };
+//=============== functions that ranks top bracket ========>
+function bracketPairing(rankArray) {
+  let rankArrayRandom = [];
+  let ranked = new Array(rankArray.length);
+  let randomBottom = [];
+  let rankedBottom = [];
+  let counter = 0;
+  let blanks = [];
+
+  for (let i = 0; i < rankArray.length; i++) {
+    rankArrayRandom[i] = rankArray[i] + Math.random() / 100;
+  }
+
+  for (let n = 1; n <= rankArrayRandom.length / 2; n++) {
+    ranked[rankArrayRandom.indexOf(Math.min(...rankArrayRandom))] =
+      n + ttff.counterGuide() - 2;
+    rankArrayRandom[rankArrayRandom.indexOf(Math.min(...rankArrayRandom))] = 10;
+  }
+  ttff.reset();
+  console.log(ranked);
+
+  for (let p = 0; p < ranked.length / 2; p++) {
+    randomBottom[p] = Math.random();
+  }
+
+  for (let r = 1; r <= randomBottom.length; r++) {
+    rankedBottom[randomBottom.indexOf(Math.max(...randomBottom))] = r;
+    randomBottom[randomBottom.indexOf(Math.max(...randomBottom))] = -1;
+  }
+  console.log(rankedBottom);
+
+  for (let q = 0; q < ranked.length; q++) {
+    if (ranked[q] == undefined) {
+      blanks[counter] = q;
+      counter++;
+    }
+  }
+
+  for (let o = 0; o < blanks.length; o++) {
+    ranked[blanks[rankedBottom.indexOf(Math.min(...rankedBottom))]] =
+      rankedBottom[rankedBottom.indexOf(Math.min(...rankedBottom))] +
+      ttff.counterGuide();
+
+    rankedBottom[rankedBottom.indexOf(Math.min(...rankedBottom))] = 100;
+  }
+
+  ttff.reset();
+  console.log(ranked);
+
+  return ranked;
+}
+
+//===========function that calculates pairing over array points====>
+
+const pairing = (function () {
+  function ranking(tp) {
+    let tpRandom = [];
+    let rank = [];
+    for (let n = 0; n < tp.length; n++) {
+      tpRandom[n] = tp[n] + Math.random() / 100;
+    }
+
+    for (let i = 1; i <= tpRandom.length; i++) {
+      let maxValueIndex = tpRandom.indexOf(Math.max(...tpRandom));
+      rank[maxValueIndex] = i;
+      tpRandom[maxValueIndex] = -1;
+    }
+    return rank;
+  }
+
+  function fnPairing(totalArray) {
+    let tp = totalArray;
+    let rank = ranking(tp);
+    console.log(rank);
+    let pairing = bracketPairing(rank);
+    return pairing;
+  }
+
+  return fnPairing;
+})();
+
+export { randomizer, serializer, pairing };

@@ -67,7 +67,6 @@
       round.update((round) => round + 1);
 
       rounds.update((roundArray) => [...roundArray, $round]);
-      console.log($globalPoints, $globalTotals);
       pointsArray.set(['']);
 
       //resistencia a pasar la ronda si no faltan puntos
