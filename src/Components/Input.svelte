@@ -115,6 +115,7 @@
         height: 3.02vw; //58px
         margin-right: 1.56vw; // 30px
         border-radius: 10px;
+        padding: 0 10px;
       }
 
       .partaker-add {

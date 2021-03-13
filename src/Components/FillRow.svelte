@@ -45,6 +45,7 @@
       .round {
         display: flex;
         margin: 0 0 1.3vw 0; // 0 0 25px 0
+        height: 100%;
       }
     }
   }

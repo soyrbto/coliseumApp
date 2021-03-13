@@ -42,13 +42,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 0.67vw; // 0 13px
+    margin: 0 0.67vw 1.3vw; 
   }
 
   .column {
     display: flex;
     flex-direction: column;
-    height: 33.33vw; // 640px
-    justify-content: space-between;
+    //height: 33.33vw; // 640px
+    // justify-content: space-between;
   }
 </style>
