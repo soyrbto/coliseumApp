@@ -27,17 +27,21 @@
     height: 100vh;
     .wrapper {
       background-color: #4f5d75;
-      height: 300px;
-      padding: 20px;
+      padding: 1.04vw 1.04vw 3.38vw 1.04vw; // 20px 65px
 
       &-main {
         display: flex;
         justify-content: space-between;
       }
+
+      img {
+        width: 18.54vw;
+        height: 2.86vw;
+      }
     }
     .wrapper-bottom {
-      height: 100%;
-      padding: 54px 66px;
+      // height: 100%;
+      padding: 2.86vw 3.43vw; // 55px 66px
     }
   }
 </style>

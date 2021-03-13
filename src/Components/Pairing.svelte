@@ -31,24 +31,24 @@
   </div>
 {/if}
 
-<style>
+<style type="text/scss">
   .pairing {
     background-color: #2d3142;
     color: white;
-    width: 90px;
-    height: 58px;
+    width: 4.68vw; // 90px
+    height: 3.02vw; // 58px
     border-radius: 14px;
-    font-size: 20px;
+    font-size: 1.04vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 13px;
+    margin: 0 0.67vw; // 0 13px
   }
 
   .column {
     display: flex;
     flex-direction: column;
-    height: 640px;
+    height: 33.33vw; // 640px
     justify-content: space-between;
   }
 </style>

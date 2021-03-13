@@ -32,19 +32,19 @@
     display: flex;
 
     .wrapper-col-1 {
-      font-size: 20px;
+      font-size: 1.04vw; // 20px
       width: 35%;
       padding-right: 3%;
 
       .fill-1 {
         width: 100%;
-        margin-bottom: 25px;
+        margin-bottom: 1.3vw; // 25px
       }
     }
     .wrapper-col-n {
       .round {
         display: flex;
-        margin: 0 0 25px 0;
+        margin: 0 0 1.3vw 0; // 0 0 25px 0
       }
     }
   }

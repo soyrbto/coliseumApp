@@ -17,8 +17,8 @@
 <style type="text/scss">
   .wrapper-col {
     display: flex;
-    font-size: 20px;
-    margin-bottom: 25px;
+    font-size: 1.04vw; // 20px
+    margin-bottom: 1.3vw; // 25px
     .col-1 {
       width: 35%;
       padding-right: 3%;
@@ -31,8 +31,8 @@
 
     .pairing,
     .points {
-      width: 90px;
-      margin: 0 13px;
+      width: 4.68vw; // 90px
+      margin: 0 0.67vw; // 0 13px
     }
   }
 </style>

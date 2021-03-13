@@ -111,9 +111,9 @@
       margin-bottom: 35px;
       display: flex;
       .name {
-        width: 493px;
-        height: 58px;
-        margin-right: 30px;
+        width: 25.67vw; // 493px
+        height: 3.02vw; //58px
+        margin-right: 1.56vw; // 30px
         border-radius: 10px;
       }
 
@@ -121,9 +121,9 @@
         background-color: #ef8254;
         color: white;
         border: none;
-        width: 128px;
-        height: 58px;
-        font-size: 14px;
+        width: 6.66vw; // 128px
+        height: 3.02vw; // 58px
+        font-size: 0.72vw; // 14px
         border-radius: 10px;
         cursor: pointer;
       }
@@ -134,18 +134,18 @@
         background-color: white;
         color: #ef8254;
         border: none;
-        padding: 13px 88px;
-        font-size: 20px;
+        padding: 0.67vw 4.58vw; // 13px 88px
+        font-size: 1.04vw; //20px
         border-radius: 10px;
-        margin-right: 15px;
+        margin-right: 0.78vw; // 15px
         cursor: pointer;
       }
       .start {
         background-color: #ef8254;
         color: white;
         border: none;
-        padding: 13px 64px;
-        font-size: 20px;
+        padding: 0.67vw 3.33vw; // 13px 64px
+        font-size: 1.04vw; // 20px
         border-radius: 10px;
         cursor: pointer;
       }

@@ -38,11 +38,11 @@
     .name {
       background-color: #ef8254;
       color: white;
-      height: 58px;
+      height: 3.02vw; // 58px
       width: 100%;
-      margin-left: 20px;
+      margin-left: 1.04vw; // 20px
       border-radius: 14px;
-      font-size: 20px;
+      font-size: 1.04vw; // 20px
       display: flex;
       justify-content: center;
       align-items: center;
