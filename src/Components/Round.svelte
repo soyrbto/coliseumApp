@@ -8,7 +8,7 @@
   }
 
   function getRound(when) {
-    if (when < 5) {
+    if (when < 6) {
       currentRound = when;
     } else {
       currentRound = 'Fin del torneo';

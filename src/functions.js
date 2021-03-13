@@ -155,4 +155,20 @@ const pairing = (function () {
   return fnPairing;
 })();
 
-export { randomizer, serializer, pairing };
+//============== funcion convertidora de numero a mesa ======>
+
+function mesaPos(num) {
+  let mesa;
+  let silla;
+  mesa = Math.ceil(num / 4);
+  let rest = num / 4 - Math.floor(num / 4);
+  if (rest <= 0.5 && rest != 0) {
+    silla = rest == 0.25 ? 1 : 2;
+  } else {
+    silla = rest == 0.75 ? 3 : 4;
+  }
+  let pos = `${mesa}-${silla}`;
+  return pos;
+}
+
+export { randomizer, serializer, pairing, mesaPos };

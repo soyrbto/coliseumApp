@@ -1,12 +1,6 @@
 <script>
-  import {
-    globalTotals,
-    players,
-    round,
-    startPairing,
-    totalPoints,
-  } from '../store';
-  import { pairing } from '../functions';
+  import { globalTotals, players, round, startPairing } from '../store';
+  import { pairing, mesaPos } from '../functions';
   export let classRound;
   let localRound = 0;
   let nodesArray, parentNode;
@@ -16,14 +10,14 @@
     if (parentNode !== undefined && $round == 1) {
       nodesArray = parentNode.querySelectorAll(`.round-${$round} >  .pairing`);
       nodesArray.forEach((el, i) => {
-        el.innerText = $startPairing[i];
+        el.innerText = mesaPos($startPairing[i]);
       });
     } else if (parentNode !== undefined) {
       nodesArray = parentNode.querySelectorAll(`.round-${$round} >  .pairing`);
       let pairingLocal = pairing($globalTotals);
       nodesArray.forEach((el, i) => {
         //aqui debe ir el pairing en funcion de la ronda
-        el.innerText = pairingLocal[i];
+        el.innerText = mesaPos(pairingLocal[i]);
       });
     }
   }
